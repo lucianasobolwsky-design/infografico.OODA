@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: PDCA vs. OODA Loop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+                max-height: 500px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            line-height: 1;
+            color: #d1d5db;
+        }
+        .flow-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .flow-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .ooda-arrow {
+            position: absolute;
+            font-size: 2.5rem;
+            color: #ff764a;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003f5c] mb-2">PDCA vs. OODA Loop</h1>
+            <p class="text-lg text-gray-600">Decifrando Estratégias de Ação: Qual Ciclo Impulsiona o Seu Sucesso?</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="pdca">
+                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold text-[#374c80] mb-4">O Ciclo PDCA: A Arquitetura da Melhoria Contínua</h2>
+                            <p class="mb-6 text-gray-700">O PDCA (Plan-Do-Check-Act) é um método iterativo focado no controle e melhoria contínua de processos e produtos. É uma abordagem deliberada e metódica, ideal para ambientes onde a previsibilidade e a qualidade são primordiais. O comprometimento com a estratégia ocorre logo no início, na fase de planejamento.</p>
+                            <div class="bg-[#e0e7ff] border-l-4 border-[#374c80] text-[#374c80] p-4 rounded-md">
+                                <p><span class="font-bold">Foco Principal:</span> Qualidade, Otimização e Redução de Riscos.</p>
+                                <p><span class="font-bold">Comprometimento:</span> Antecipado (no Planejamento).</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center space-y-2">
+                            <div class="w-full max-w-sm">
+                                <div class="flow-card bg-white p-4 rounded-lg shadow-md border-l-4 border-[#374c80]">
+                                    <h3 class="font-bold text-lg text-[#374c80]">P <span class="font-normal text-gray-600">- Planejar</span></h3>
+                                    <p class="text-sm text-gray-600">Definir metas e criar um plano detalhado.</p>
+                                </div>
+                                <div class="text-center flow-arrow my-1">&#11167;</div>
+                                <div class="flow-card bg-white p-4 rounded-lg shadow-md border-l-4 border-[#7a5195]">
+                                    <h3 class="font-bold text-lg text-[#7a5195]">D <span class="font-normal text-gray-600">- Fazer</span></h3>
+                                    <p class="text-sm text-gray-600">Executar o plano, preferencialmente em pequena escala.</p>
+                                </div>
+                                <div class="text-center flow-arrow my-1">&#11167;</div>
+                                <div class="flow-card bg-white p-4 rounded-lg shadow-md border-l-4 border-[#bc5090]">
+                                    <h3 class="font-bold text-lg text-[#bc5090]">C <span class="font-normal text-gray-600">- Verificar</span></h3>
+                                    <p class="text-sm text-gray-600">Analisar os resultados e comparar com as metas.</p>
+                                </div>
+                                <div class="text-center flow-arrow my-1">&#11167;</div>
+                                <div class="flow-card bg-white p-4 rounded-lg shadow-md border-l-4 border-[#ef5675]">
+                                    <h3 class="font-bold text-lg text-[#ef5675]">A <span class="font-normal text-gray-600">- Agir</span></h3>
+                                    <p class="text-sm text-gray-600">Padronizar o sucesso ou ajustar para um novo ciclo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ooda">
+                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="md:order-2">
+                            <h2 class="text-3xl font-bold text-[#ff764a] mb-4">O Loop OODA: A Dinâmica da Adaptação Rápida</h2>
+                            <p class="mb-6 text-gray-700">O OODA Loop (Observe-Orient-Decide-Act) é um ciclo de decisão desenvolvido para cenários de alta velocidade e incerteza. Ele prioriza a agilidade e a capacidade de reorientar-se rapidamente com base em novas informações. O comprometimento com a ação é tardio, permitindo máxima flexibilidade até o último momento.</p>
+                             <div class="bg-[#fff3e0] border-l-4 border-[#ff764a] text-[#ff764a] p-4 rounded-md">
+                                <p><span class="font-bold">Foco Principal:</span> Velocidade, Agilidade e Adaptação.</p>
+                                <p><span class="font-bold">Comprometimento:</span> Tardio (na Ação).</p>
+                            </div>
+                        </div>
+                        <div class="md:order-1 flex items-center justify-center p-4">
+                            <div class="relative w-72 h-72">
+                                <div class="absolute top-0 left-1/2 -translate-x-1/2 flow-card bg-white p-3 rounded-lg shadow-md w-40 text-center border-b-4 border-[#ff764a]">
+                                    <h3 class="font-bold text-[#ff764a]">Observar</h3>
+                                    <p class="text-xs text-gray-500">Coletar dados</p>
+                                </div>
+                                <div class="absolute right-0 top-1/2 -translate-y-1/2 flow-card bg-white p-3 rounded-lg shadow-md w-40 text-center border-b-4 border-[#ffa600]">
+                                    <h3 class="font-bold text-[#ffa600]">Orientar</h3>
+                                    <p class="text-xs text-gray-500">Analisar e entender</p>
+                                </div>
+                                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 flow-card bg-white p-3 rounded-lg shadow-md w-40 text-center border-b-4 border-[#ef5675]">
+                                    <h3 class="font-bold text-[#ef5675]">Decidir</h3>
+                                    <p class="text-xs text-gray-500">Escolher uma ação</p>
+                                </div>
+                                <div class="absolute left-0 top-1/2 -translate-y-1/2 flow-card bg-white p-3 rounded-lg shadow-md w-40 text-center border-b-4 border-[#bc5090]">
+                                    <h3 class="font-bold text-[#bc5090]">Agir</h3>
+                                    <p class="text-xs text-gray-500">Executar a decisão</p>
+                                </div>
+                                <div class="absolute top-[28%] right-[28%] ooda-arrow" style="transform: rotate(45deg);">&#8635;</div>
+                                <div class="absolute bottom-[28%] right-[28%] ooda-arrow" style="transform: rotate(135deg);">&#8635;</div>
+                                <div class="absolute bottom-[28%] left-[28%] ooda-arrow" style="transform: rotate(225deg);">&#8635;</div>
+                                <div class="absolute top-[28%] left-[28%] ooda-arrow" style="transform: rotate(315deg);">&#8635;</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="comparison">
+                <div class="bg-white rounded-lg shadow-xl p-6 md:p-8">
+                    <h2 class="text-3xl font-bold text-center text-[#003f5c] mb-2">Análise Comparativa: PDCA vs. OODA</h2>
+                    <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Cada modelo possui pontos fortes distintos. O gráfico abaixo compara as duas abordagens em quatro dimensões críticas, revelando seus perfis operacionais e estratégicos.</p>
+                    <div class="chart-container">
+                        <canvas id="comparisonChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="scenarios">
+                <h2 class="text-3xl font-bold text-center text-[#003f5c] mb-8">Quando Usar Cada Ferramenta?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-xl p-8">
+                        <h3 class="text-2xl font-bold text-[#374c80] mb-4">Cenários para o PDCA</h3>
+                        <p class="text-gray-700 mb-6">O PDCA brilha em ambientes que demandam consistência, precisão e otimização incremental. É a escolha certa quando o objetivo é aperfeiçoar um sistema existente.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="text-2xl mr-4 text-[#374c80]">&#9881;</span> <span><span class="font-semibold">Gestão de Qualidade:</span> Implementar e monitorar padrões para garantir a conformidade e a satisfação do cliente.</span></li>
+                            <li class="flex items-start"><span class="text-2xl mr-4 text-[#374c80]">&#128200;</span> <span><span class="font-semibold">Otimização de Processos:</span> Reduzir desperdícios, custos e tempo em linhas de produção ou fluxos de trabalho administrativos.</span></li>
+                            <li class="flex items-start"><span class="text-2xl mr-4 text-[#374c80]">&#128640;</span> <span><span class="font-semibold">Desenvolvimento de Produtos:</span> Gerenciar fases de teste e validação de novos produtos de forma controlada e iterativa.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-xl p-8">
+                        <h3 class="text-2xl font-bold text-[#ff764a] mb-4">Cenários para o OODA</h3>
+                        <p class="text-gray-700 mb-6">O OODA é indispensável em arenas competitivas e voláteis, onde a capacidade de reagir mais rápido que os oponentes ou o mercado define o sucesso.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="text-2xl mr-4 text-[#ff764a]">&#9888;&#65039;</span> <span><span class="font-semibold">Gestão de Crises:</span> Tomar decisões rápidas e eficazes durante emergências ou falhas inesperadas.</span></li>
+                            <li class="flex items-start"><span class="text-2xl mr-4 text-[#ff764a]">&#127951;</span> <span><span class="font-semibold">Estratégia Competitiva:</span> Responder a movimentos de concorrentes, adaptar-se a novas tecnologias ou explorar janelas de oportunidade.</span></li>
+                            <li class="flex items-start"><span class="text-2xl mr-4 text-[#ff764a]">&#128161;</span> <span><span class="font-semibold">Inovação Disruptiva:</span> Navegar em mercados incertos onde o aprendizado rápido e a pivotagem são essenciais para a sobrevivência.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <footer class="text-center mt-16 py-6 border-t border-gray-200">
+            <p class="text-gray-500">Escolha a ferramenta certa para o desafio certo. A maestria está em saber quando planejar e quando reagir.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('comparisonChart');
+
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Planejamento Detalhado', 'Velocidade de Resposta', 'Adaptabilidade', 'Redução de Risco'],
+                        datasets: [{
+                            label: 'PDCA',
+                            data: [9, 3, 4, 9],
+                            fill: true,
+                            backgroundColor: 'rgba(55, 76, 128, 0.2)',
+                            borderColor: 'rgb(55, 76, 128)',
+                            pointBackgroundColor: 'rgb(55, 76, 128)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgb(55, 76, 128)'
+                        }, {
+                            label: 'OODA Loop',
+                            data: [3, 9, 9, 4],
+                            fill: true,
+                            backgroundColor: 'rgba(255, 118, 74, 0.2)',
+                            borderColor: 'rgb(255, 118, 74)',
+                            pointBackgroundColor: 'rgb(255, 118, 74)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgb(255, 118, 74)'
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        scales: {
+                            r: {
+                                angleLines: {
+                                    color: '#e2e8f0'
+                                },
+                                grid: {
+                                    color: '#e2e8f0'
+                                },
+                                pointLabels: {
+                                    font: {
+                                        size: 14,
+                                        family: "'Poppins', sans-serif"
+                                    },
+                                    color: '#4b5563'
+                                },
+                                ticks: {
+                                    backdropColor: 'rgba(255, 255, 255, 0.75)',
+                                    color: '#6b7280',
+                                    stepSize: 2
+                                },
+                                suggestedMin: 0,
+                                suggestedMax: 10
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    font: {
+                                        size: 14,
+                                        family: "'Poppins', sans-serif"
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: function(tooltipItems) {
+                                        const item = tooltipItems[0];
+                                        let label = item.chart.data.labels[item.dataIndex];
+                                        if (Array.isArray(label)) {
+                                          return label.join(' ');
+                                        } else {
+                                          return label;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
